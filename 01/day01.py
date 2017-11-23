@@ -3,6 +3,7 @@ with open('input.txt', 'r') as myfile:
 
 current_floor = 0
 position = 0
+first_time = True
 
 for char in data:
     position += 1
@@ -11,8 +12,8 @@ for char in data:
     elif char == ')':
         current_floor -= 1
 
-    if current_floor == -1:
-        print position
-        break
+    if current_floor == -1 and first_time:
+        print 'Part 2: ', position
+        first_time = False
 
-print(current_floor)
+print 'Part 1: ', current_floor
